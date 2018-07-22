@@ -18,8 +18,8 @@ Book of Work
 
 1. TDD with Python - Review.
   * Deployment Process
-    Setting up server from scratch using Nginx + Gunicorn  
-    Use Python Fabric library for automated deployment
+    - Setting up server from scratch using Nginx + Gunicorn  
+    - Use Python Fabric library for automated deployment
 
 2. Create a Markdown cheatsheet
 
@@ -27,6 +27,8 @@ Book of Work
 
 4. Write up on setting up dev environment for new projects
   * Write up notes of simple virtualenv and virtualenvwrapper usage.
+
+5. Set up SSH for github and write some notes on how to do it from  scratch
 
 Ideas
 =====
