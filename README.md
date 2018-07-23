@@ -24,6 +24,7 @@ Book of Work
 2. Create a Markdown cheatsheet
 
 3. Start Expenses web app
+  * Review existing web app that was developed called wallets
 
 4. Write up on setting up dev environment for new projects
   * Write up notes of simple virtualenv and virtualenvwrapper usage.

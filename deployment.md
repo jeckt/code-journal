@@ -22,19 +22,19 @@ On Ubuntu 18.04 Bionic/LTS
  
 ### Python 3.6
 ```shell
-steve@server:$ *sudo apt update*
-steve@server:$ *sudo apt install python3 python3-venv*
+steve@server:$ sudo apt update
+steve@server:$ sudo apt install python3 python3-venv
 ```
  
 ### Git
 ```shell
-steve@server:$ *sudo apt install git*
+steve@server:$ sudo apt install git
 ```
  
 ### Source Code
 ```shell
-steve@server:$ *export SITENAME=url_of_website*
-steve@server:$ *git clone repo_url ~/sites/$SITENAME*
+steve@server:$ export SITENAME=url_of_website
+steve@server:$ git clone repo_url ~/sites/$SITENAME
 ```
  
 ### Set up Python Virtual Environment
@@ -44,12 +44,12 @@ It is better to set up the virtual environment within the sites directory so tha
 We will explicitly call python by specifying the python path as opposed to using `source ./virtualenv/bin/activate`.
  
 ```shell
-steve@server:$ *python3.6 -m venv virtualenv*
-steve@server:$ *./virtualenv/bin/pip install -r requirements.txt*
+steve@server:$ python3.6 -m venv virtualenv
+steve@server:$ ./virtualenv/bin/pip install -r requirements.txt
 ```
  
 ### Don't forget to Migrate the Database...
  
 ```shell
-steve@server:$ *./virtualenv/bin/python manage.py migrate --noinput*
+steve@server:$ ./virtualenv/bin/python manage.py migrate --noinput
 ```
