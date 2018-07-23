@@ -34,10 +34,10 @@ $ source `which virtualenvwrapper.sh`
 
 Once virtualenvwrapper has been activated in the terminal the following commands can be used:
 
-|Command              | Description                                                                       |
+|Command               | Description                                                                       |
 |---------------------------------------------------------------------------------------------------------|
-|`$ mkvirtualenv $ENV | Creates a new virtual environment and installs python binaries in the environment.|
+|`$ mkvirtualenv $ENV` | Creates a new virtual environment and installs python binaries in the environment.|
 |---------------------------------------------------------------------------------------------------------|
-|`$ workon $ENV       | Activates the environment to work on for the terminal session.                    |
+|`$ workon $ENV`       | Activates the environment to work on for the terminal session.                    |
 |---------------------------------------------------------------------------------------------------------|
-|`$ deactivate`       | Deactivates the current environment you are working on                            |
+|`$ deactivate`        | Deactivates the current environment you are working on                            |
