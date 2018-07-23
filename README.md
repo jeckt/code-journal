@@ -26,10 +26,7 @@ Book of Work
 3. Start Expenses web app
   * Review existing web app that was developed called wallets
 
-4. Write up on setting up dev environment for new projects
-  * Write up notes of simple virtualenv and virtualenvwrapper usage.
-
-5. Set up SSH for github and write some notes on how to do it from  scratch
+4. Set up SSH for github and write some notes on how to do it from  scratch
 
 Ideas
 =====

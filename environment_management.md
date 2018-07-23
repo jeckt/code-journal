@@ -22,7 +22,7 @@ $ VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 ### Usage in Terminal
 
-``shell
+```shell
 $ source /usr/local/bin/virtualenvwrapper.sh
 ```
 or
