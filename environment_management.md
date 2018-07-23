@@ -37,7 +37,5 @@ Once virtualenvwrapper has been activated in the terminal the following commands
 |Command               | Description                                                                       |
 |----------------------|-----------------------------------------------------------------------------------|
 |`$ mkvirtualenv $ENV` | Creates a new virtual environment and installs python binaries in the environment.|
-|----------------------|-----------------------------------------------------------------------------------|
 |`$ workon $ENV`       | Activates the environment to work on for the terminal session.                    |
-|----------------------|-----------------------------------------------------------------------------------|
 |`$ deactivate`        | Deactivates the current environment you are working on                            |
