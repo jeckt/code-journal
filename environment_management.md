@@ -39,3 +39,21 @@ Once virtualenvwrapper has been activated in the terminal the following commands
 |`$ mkvirtualenv $ENV` | Creates a new virtual environment and installs python binaries in the environment.|
 |`$ workon $ENV`       | Activates the environment to work on for the terminal session.                    |
 |`$ deactivate`        | Deactivates the current environment you are working on                            |
+
+
+Spinning New Environments for Existing Projects 
+===============================================
+
+A requirements.txt file helps install all required dependencies when pulling a project into a new environment, whether that be for development, staging or production.
+
+### Generate or Update Requirements file
+
+```shell
+$ pip freeze > requirements.txt
+```
+
+### Install Dependencies in New Environment
+
+```shell
+$ pip install -r requirements.txt
+```
