@@ -157,6 +157,29 @@ else:
     ALLOWED_HOSTS = []
 ```
 
+Store these variables on the server using a `.env` file
+
+```
+DJANGO_DEBUG_FALSE=y
+SITENAME=$SITENAME
+DJANGO_SECRET_KEY=your_secret_key!
+```
+
+You can generate a secret key using this little command:
+
+```shell
+(
+python3.6 -c"import random; print(''.join(random.SystemRandom().
+choices('abcdefghijklmnopqrstuvwxyz0123456789', k=50)))"
+)
+```
+
+You can then set these variables into your current terminal:
+
+```shell
+steve@server:$ set -a; source.env; set +a
+```
+
 ### Start Gunicorn on Boot with Systemd
 
 `server: /etc/systemd/system/gunicorn-[DOMAIN].service`
