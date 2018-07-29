@@ -36,6 +36,33 @@ PaaS are useful for small sites.
 7. Restart Gunicorn job
 8. Run FTs to check everything works
 
+SSH on New Server
+=================
+
+On the machine you will be working on, create a new ssh key.
+
+```shell
+$ ssh-keygen
+```
+
+Login to the server as the root user and add the user with sudo rights
+
+```shell
+root@server:$ useradd -m -s /bin/bash steve
+root@server:$ usermod -a -G sudo steve
+passwd steve
+```
+
+Switch login to user and add the *public key* to the server.
+
+```shell
+steve@server:$ su - steve
+steve@server:$ mkdir -p ~/.ssh
+steve@server:$ echo SSH_PUBLIC_KEY >> ~/.ssh/authorized_keys
+``` 
+
+You should be able to now login.
+
 Deployment on New Server
 ========================
  
