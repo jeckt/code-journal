@@ -209,3 +209,87 @@ steve@server:$ sudo systemctl daemon-reload
 steve@server:$ sudo systemctl enable gunicorn-DOMAIN
 steve@server:$ sudo systemctl start gunicorn-DOMAIN
 ```
+
+Automated Deployment with Fabric
+================================
+
+First install fabric3 into your environment
+
+```shell
+$ pip install fabric3
+```
+
+Create a deployment script with the main function being `deploy`. Store in `deploy_tools/fabfile.py`. Make sure you restart the gunicorn service after you deploy! Do this with the following command `sudo service gunicorn-service-name restart`.
+
+```python
+import random
+from fabric.contrib.files import append, exists
+from fabric.api import cd, env, local, run
+
+REPO_URL = 'location of repo'
+
+def deploy():
+    site_folder = f'/home/{env.user}/sites/{env.host}'
+    run(f'mkdir -p {site_folder}')
+    with cd(site_folder):
+        _get_latest_source()
+        _update_virtualenv()
+        _create_or_update_dotenv()
+        _update_static_files()
+        _update_database()
+```
+
+The fabric `run` function basically runs the requested command on the target machine. To run this script use the following command:
+
+```shell
+$ fab deploy:host=steve@mindfulspending.xyz
+```
+
+### Pulling Down Source Code with Git
+
+```python
+def _get_latest_source():
+    if exists('.git'):
+        run('git fetch')
+    else:
+        run(f'git clone {REPO_URL} .')
+    current_commit = local("git log -n 1 --format=%H", capture=True)
+    run(f'git reset --hard {current_commit}')
+```
+
+### Updating the Virtualenv
+
+```python
+def _update_virtualenv():
+    if not exists('virtualenv/bin/pip'):
+        run(f'python3.6 -m venv virtualenv')
+    run('./virtualenv/bin/pip install -r requirements.txt')
+```
+
+### Creating a New .env File if Necessary
+
+```python
+def _create_or_update_dotenv():
+    append('.env', 'DJANGO_DEBUG_FALSE=Y')
+    append('.env', f'SITENAME={env.host}')
+    current_contents = run('cat .env')
+    if 'DJANGO_SECRET_KEY' not in current_contents:
+        new_secret = ''.join(random.SystemRandom().choices(
+            'abcdefghijklmnopqrstuvwxyz0123456789', k=50
+        ))
+        append('.env', f'DJANGO_SECRET_KEY={new_secret}')
+```
+
+### Updating Static Files
+
+```python
+def _update_static_files():
+    run('./virtualenv/bin/python manage.py collectstatic --noinput')
+```
+
+### Migrating the Database if Necessary
+
+```python
+def _update_database():
+    run('./virtualenv/bin/python manage.py migrate --noinput')
+```
