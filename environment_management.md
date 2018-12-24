@@ -20,6 +20,12 @@ $ VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 
 `$WORKON_HOME` defines where all the virtual environments will be installed and `$VIRTUALENVWRAPPER_PYTHON` defines the python path where the python binaries will be sourced when creating a new virtual environment.
 
+Alternatively if you don't want to use the virtualenvwrapper then use the following shell command in the project folder
+
+```shell
+$ virtualenv venv
+```
+
 ### Usage in Terminal
 
 ```shell
@@ -28,6 +34,11 @@ $ source /usr/local/bin/virtualenvwrapper.sh
 or
 ```shell
 $ source `which virtualenvwrapper.sh`
+```
+
+Alternatively if you are using virtualenv without the wrapper:
+```shell
+$ source /path/to/ENV/bin/activate
 ```
 
 ### Useful VirtualEnvWrapper Commands
