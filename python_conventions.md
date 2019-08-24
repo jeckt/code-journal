@@ -1,6 +1,8 @@
 Python Coding Conventions
 =========================
 
+Use flake8, pep8, pyflake or pylint to do checks!
+
 Based on PEP 8 -- Style Guide for Python Code
 
 * Folder structure
