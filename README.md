@@ -2,7 +2,7 @@ Personal Coding Journal
 =======================
 
 This is a my personal coding journal which provides
-useful information on various proramming topics that 
+useful information on various programming topics that 
 I have discovered along my journey through programming.
 
 The purpose of this journal is to provide a quick reference
