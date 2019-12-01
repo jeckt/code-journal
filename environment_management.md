@@ -26,6 +26,12 @@ Alternatively if you don't want to use the virtualenvwrapper then use the follow
 $ virtualenv venv
 ```
 
+If you want to specify the python version to use in the virtual environment you could do something similar to the following
+
+```shell
+$ virtualenv --python=python3 venv
+```
+
 ### Usage in Terminal
 
 ```shell
