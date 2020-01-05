@@ -19,3 +19,28 @@ browser.get(url)
 
 browser.quit()
 ```
+
+# Useful Functions for Accessing Elements
+```python
+>> print(browser.title) # window title of the web site
+>>
+>> element = browser.find_element_by_tag_name(tag_name)
+>> print(element.text)
+>>
+>> elements = element.find_elements_by_tag_name(tag_name)
+>> for e in elements:
+>>     print(e.text)
+>>
+>> element = browser.find_element_by_id(element_id)
+>> attr = element.get_attribute(attr_name)
+>> print(attr)
+```
+
+# Entering Data into Input Boxes
+```python
+>> from selenium.webdriver.common.keys import Keys
+>>
+>> inputbox = browser.find_element_by_id(inputbox_id)
+>> inputbox.send_keys(data)
+>> inputbox.send_keys(Keys.ENTER)
+```
